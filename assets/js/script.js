@@ -11,22 +11,21 @@ $('.start').click(function(){
 // read srt file
 var srtFile = $.ajax({url: "assets/src/world.execute(me)-en.srt", async: false});
 var fullSrt = srtFile.responseText;
-var splitText = fullSrt.split('\r\n');
+var splitText = fullSrt.split('\n');
 
 
 // seperate code
 var codeFile = $.ajax({url: "assets/src/code.txt", async: false});
 var fullCode = codeFile.responseText;
-var splitCode = fullCode.split('\r\n\r\n\r\n\r\n\r\n\r\n');
+var splitCode = fullCode.split('\n\n\n\n\n\n');
 for(var i = 0; i < splitCode.length; i++) {
-    splitCode[i] = splitCode[i].replace(/\r\n/g, '<br/>');
+    splitCode[i] = splitCode[i].replace(/\n/g, '<br/>');
 }
 
 
 // seperate time span & lyric
 var timeSpan = [];
 for(var j = 0; j < splitText.length; j += 4) {
-    console.log(splitText.length);
     timeSpan.push(splitText[j]);
 }
 
@@ -41,7 +40,6 @@ while(count1 < splitText.length) {
 // start time
 var startTime = [];
 for(var k = 0; k < timeSpan.length; k++) {
-    console.log(timeSpan.length);
     var sp = timeSpan[k].split(' --> ')[0];
     startTime.push(sp);
 }
