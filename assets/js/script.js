@@ -7,7 +7,7 @@ var splitText = fullSrt.split('\r\n');
 
 
 // seperate time span & lyric
-var timeSpan = new Array();
+var timeSpan = [];
 var count1 = 1;
 while(count1 < splitText.length) {
     timeSpan.push(splitText[count1]);
@@ -16,7 +16,7 @@ while(count1 < splitText.length) {
 
 
 // start time
-var startTime = new Array();
+var startTime = [];
 var count3 = 0;
 while(count3 < timeSpan.length) {
     var sp = timeSpan[count3].split(' --> ')[0];
@@ -26,7 +26,7 @@ while(count3 < timeSpan.length) {
 
 
 // end time
-var endTime = new Array();
+var endTime = [];
 var count4 = 0
 while(count4 < timeSpan.length) {
     var sp = timeSpan[count4].split(' --> ')[1];
@@ -38,7 +38,7 @@ while(count4 < timeSpan.length) {
 
 
 // seperate lyrics
-var lyricText = new Array();
+var lyricText = [];
 var count2 = 2;
 while(count2 < splitText.length) {
     lyricText.push(splitText[count2]);
