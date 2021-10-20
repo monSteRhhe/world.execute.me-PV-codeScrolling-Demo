@@ -1,49 +1,58 @@
 'use strict';
 
+
+$('.start').click(function(){
+    $('.start').fadeOut();
+    music.play();
+    audioTime();
+})
+
+
+window.onload = function() {
+    // seperate time span & lyric
+    var timeSpan = [];
+    var count1 = 1;
+    while(count1 < splitText.length) {
+        timeSpan.push(splitText[count1]);
+        count1 += 4;
+    }
+
+    // start time
+    var startTime = [];
+    var count3 = 0;
+    while(count3 < timeSpan.length) {
+        var sp = timeSpan[count3].split(' --> ')[0];
+        startTime.push(sp);
+        count3 += 1;
+    }
+
+
+    // end time
+    var endTime = [];
+    var count4 = 0
+    while(count4 < timeSpan.length) {
+        var sp = timeSpan[count4].split(' --> ')[1];
+        endTime.push(sp);
+
+        if(count4 + 1 == timeSpan.length) var terminatePlay = sp;
+        count4 += 1;
+    }
+
+
+    // seperate lyrics
+    var lyricText = [];
+    var count2 = 2;
+    while(count2 < splitText.length) {
+        lyricText.push(splitText[count2]);
+        count2 += 4;
+    }
+}
+
+
 // read srt file
 var srtFile = $.ajax({url: "assets/src/world.execute(me)-en.srt", async: false});
 var fullSrt = srtFile.responseText;
 var splitText = fullSrt.split('\r\n');
-
-
-// seperate time span & lyric
-var timeSpan = [];
-var count1 = 1;
-while(count1 < splitText.length) {
-    timeSpan.push(splitText[count1]);
-    count1 += 4;
-}
-
-
-// start time
-var startTime = [];
-var count3 = 0;
-while(count3 < timeSpan.length) {
-    var sp = timeSpan[count3].split(' --> ')[0];
-    startTime.push(sp);
-    count3 += 1;
-}
-
-
-// end time
-var endTime = [];
-var count4 = 0
-while(count4 < timeSpan.length) {
-    var sp = timeSpan[count4].split(' --> ')[1];
-    endTime.push(sp);
-
-    if(count4 + 1 == timeSpan.length) var terminatePlay = sp;
-    count4 += 1;
-}
-
-
-// seperate lyrics
-var lyricText = [];
-var count2 = 2;
-while(count2 < splitText.length) {
-    lyricText.push(splitText[count2]);
-    count2 += 4;
-}
 
 
 // seperate code
@@ -53,16 +62,6 @@ var splitCode = fullCode.split('\r\n\r\n\r\n\r\n\r\n\r\n');
 for(var i = 0; i < splitCode.length; i++) {
     splitCode[i] = splitCode[i].replace(/\r\n/g, '<br/>');
 }
-
-$('.start').click(function(){
-    $('.start').fadeOut();
-    music.play();
-    audioTime();
-})
-
-
-console.log(splitText, splitCode, startTime, endTime, lyricText);
-
 
 
 function audioTime() {
