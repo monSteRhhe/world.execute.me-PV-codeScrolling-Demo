@@ -26,6 +26,7 @@ for(var i = 0; i < splitCode.length; i++) {
 // seperate time span & lyric
 var timeSpan = [];
 for(var j = 0; j < splitText.length; j += 4) {
+    console.log(splitText.length);
     timeSpan.push(splitText[j]);
 }
 
