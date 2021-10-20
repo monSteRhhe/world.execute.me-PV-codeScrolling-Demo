@@ -27,63 +27,40 @@ for(var i = 0; i < splitCode.length; i++) {
 var timeSpan = [];
 var count1 = 1;
 while(count1 < splitText.length) {
-    console.log('1');
     timeSpan.push(splitText[count1]);
     count1 += 4;
 }
 
 // start time
 var startTime = [];
-for(var k = 0; k < timeSpan.length; k++) {
-    var sp = timeSpan[k].split(' --> ')[0];
-    startTime.push(sp);
-}
-
-/*
 var count3 = 0;
 while(count3 < timeSpan.length) {
-    console.log('2');
     var sp = timeSpan[count3].split(' --> ')[0];
     startTime.push(sp);
     count3 += 1;
 }
-*/
 
 
 // end time
 var endTime = [];
-for(var l = 0; l < timeSpan.length; l++) {
-    var sp = timeSpan[l].split(' --> ')[1];
-    endTime.push(sp);
-}
-
-/*
 var count4 = 0
 while(count4 < timeSpan.length) {
-    console.log('3');
     var sp = timeSpan[count4].split(' --> ')[1];
     endTime.push(sp);
 
     if(count4 + 1 == timeSpan.length) var terminatePlay = sp;
     count4 += 1;
 }
-*/
 
 
 // seperate lyrics
 var lyricText = [];
-for(var o = 0; o < splitText.length; o += 4) {
-    lyricText.push(splitText[o]);
-}
-
-/*
 var count2 = 2;
 while(count2 < splitText.length) {
-    console.log('4');
     lyricText.push(splitText[count2]);
     count2 += 4;
 }
-*/
+
 
 function audioTime() {
     setInterval(function() {
