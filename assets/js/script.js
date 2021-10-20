@@ -23,6 +23,7 @@ for(var i = 0; i < splitCode.length; i++) {
 }
 
 
+if(splitText.length == 464) console.log('1');
 // seperate time span & lyric
 var timeSpan = [];
 for(var j = 0; j < splitText.length; j += 4) {
