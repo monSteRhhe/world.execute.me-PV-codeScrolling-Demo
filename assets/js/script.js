@@ -13,6 +13,7 @@ window.onload = function() {
     var timeSpan = [];
     var count1 = 1;
     while(count1 < splitText.length) {
+        console.log('1');
         timeSpan.push(splitText[count1]);
         count1 += 4;
     }
@@ -21,6 +22,7 @@ window.onload = function() {
     var startTime = [];
     var count3 = 0;
     while(count3 < timeSpan.length) {
+        console.log('2');
         var sp = timeSpan[count3].split(' --> ')[0];
         startTime.push(sp);
         count3 += 1;
@@ -31,6 +33,7 @@ window.onload = function() {
     var endTime = [];
     var count4 = 0
     while(count4 < timeSpan.length) {
+        console.log('3');
         var sp = timeSpan[count4].split(' --> ')[1];
         endTime.push(sp);
 
@@ -43,6 +46,7 @@ window.onload = function() {
     var lyricText = [];
     var count2 = 2;
     while(count2 < splitText.length) {
+        console.log('4');
         lyricText.push(splitText[count2]);
         count2 += 4;
     }
