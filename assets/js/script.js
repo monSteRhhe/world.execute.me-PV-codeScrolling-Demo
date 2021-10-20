@@ -60,6 +60,11 @@ $('.start').click(function(){
     audioTime();
 })
 
+
+console.log(splitText, splitCode, startTime, endTime, lyricText);
+
+
+
 function audioTime() {
     setInterval(function() {
         var ct = music.currentTime.toFixed(3);
