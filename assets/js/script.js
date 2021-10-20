@@ -40,7 +40,7 @@ while(count1 < splitText.length) {
 
 // start time
 var startTime = [];
-for(var k = 0; k < splitText.length; k++) {
+for(var k = 0; k < timeSpan.length; k++) {
     console.log('2');
     var sp = timeSpan[k].split(' --> ')[0];
     startTime.push(sp);
@@ -59,7 +59,7 @@ while(count3 < timeSpan.length) {
 
 // end time
 var endTime = [];
-for(var l = 0; l < splitText.length; l++) {
+for(var l = 0; l < timeSpan.length; l++) {
     console.log('3');
     var sp = timeSpan[l].split(' --> ')[1];
     endTime.push(sp);
