@@ -25,15 +25,28 @@ for(var i = 0; i < splitCode.length; i++) {
 
 // seperate time span & lyric
 var timeSpan = [];
+for(var i = 0; i < splitText.length; i += 4) {
+    console.log('1');
+    timeSpan.push(splitText[i]);
+}
+
+/*
 var count1 = 1;
 while(count1 < splitText.length) {
     console.log('1');
     timeSpan.push(splitText[count1]);
     count1 += 4;
-}
+}*/
 
 // start time
 var startTime = [];
+for(var i = 0; i < splitText.length; i++) {
+    console.log('2');
+    var sp = timeSpan[i].split(' --> ')[0];
+    startTime.push(sp);
+}
+
+/*
 var count3 = 0;
 while(count3 < timeSpan.length) {
     console.log('2');
@@ -41,10 +54,18 @@ while(count3 < timeSpan.length) {
     startTime.push(sp);
     count3 += 1;
 }
+*/
 
 
 // end time
 var endTime = [];
+for(var i = 0; i < splitText.length; i++) {
+    console.log('3');
+    var sp = timeSpan[i].split(' --> ')[1];
+    endTime.push(sp);
+}
+
+/*
 var count4 = 0
 while(count4 < timeSpan.length) {
     console.log('3');
@@ -54,17 +75,24 @@ while(count4 < timeSpan.length) {
     if(count4 + 1 == timeSpan.length) var terminatePlay = sp;
     count4 += 1;
 }
+*/
 
 
 // seperate lyrics
 var lyricText = [];
+for(var i = 0; i < splitText.length; i += 4) {
+    console.log('4');
+    lyricText.push(splitText[count2]);
+}
+
+/*
 var count2 = 2;
 while(count2 < splitText.length) {
     console.log('4');
     lyricText.push(splitText[count2]);
     count2 += 4;
 }
-
+*/
 
 function audioTime() {
     setInterval(function() {
