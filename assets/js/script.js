@@ -35,7 +35,7 @@ music.preload = 'auto';
 
 
 // read srt file
-var srtFile = $.ajax({url: "assets/src/world.execute(me)-en.srt", async: false});
+var srtFile = $.ajax({url: "https://monsterhhe.github.io/world.execute.me-PV-codeScrolling-Demo/assets/src/world.execute(me)-en.srt", async: false});
 var fullSrt = srtFile.responseText;
 var splitText = fullSrt.split('\r\n');
 
@@ -81,7 +81,7 @@ while(count2 < splitText.length) {
 
 
 // seperate code
-var codeFile = $.ajax({url: "assets/src/code.txt", async: false});
+var codeFile = $.ajax({url: "https://monsterhhe.github.io/world.execute.me-PV-codeScrolling-Demo/assets/src/code.txt", async: false});
 var fullCode = codeFile.responseText;
 var splitCode = fullCode.split('\r\n\r\n\r\n\r\n\r\n\r\n');
 for(var i = 0; i < splitCode.length; i++) {
