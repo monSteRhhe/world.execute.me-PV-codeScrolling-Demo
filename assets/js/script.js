@@ -25,9 +25,9 @@ for(var i = 0; i < splitCode.length; i++) {
 
 // seperate time span & lyric
 var timeSpan = [];
-for(var i = 0; i < splitText.length; i += 4) {
+for(var j = 0; j < splitText.length; j += 4) {
     console.log('1');
-    timeSpan.push(splitText[i]);
+    timeSpan.push(splitText[j]);
 }
 
 /*
@@ -40,9 +40,9 @@ while(count1 < splitText.length) {
 
 // start time
 var startTime = [];
-for(var i = 0; i < splitText.length; i++) {
+for(var k = 0; k < splitText.length; k++) {
     console.log('2');
-    var sp = timeSpan[i].split(' --> ')[0];
+    var sp = timeSpan[k].split(' --> ')[0];
     startTime.push(sp);
 }
 
@@ -59,9 +59,9 @@ while(count3 < timeSpan.length) {
 
 // end time
 var endTime = [];
-for(var i = 0; i < splitText.length; i++) {
+for(var l = 0; l < splitText.length; l++) {
     console.log('3');
-    var sp = timeSpan[i].split(' --> ')[1];
+    var sp = timeSpan[l].split(' --> ')[1];
     endTime.push(sp);
 }
 
@@ -80,9 +80,9 @@ while(count4 < timeSpan.length) {
 
 // seperate lyrics
 var lyricText = [];
-for(var i = 0; i < splitText.length; i += 4) {
+for(var o = 0; o < splitText.length; o += 4) {
     console.log('4');
-    lyricText.push(splitText[count2]);
+    lyricText.push(splitText[o]);
 }
 
 /*
