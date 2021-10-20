@@ -8,6 +8,13 @@ $('.start').click(function(){
 })
 
 
+// audio player
+music.volume = 0.2;
+music.autoplay = false;
+music.loop = false;
+music.preload = 'auto';
+
+
 // read srt file
 var srtFile = $.ajax({url: "assets/src/world.execute(me)-en.srt", async: false});
 var fullSrt = srtFile.responseText;
@@ -30,6 +37,7 @@ while(count1 < splitText.length) {
     timeSpan.push(splitText[count1]);
     count1 += 4;
 }
+
 
 // start time
 var startTime = [];
@@ -79,13 +87,6 @@ function checkTime(t) {
     if (t < 10) return t = "0" + t;
     else return t;
 }
-
-
-// audio player
-music.volume = 0.2;
-music.autoplay = false;
-music.loop = false;
-music.preload = 'auto';
 
 
 var ln = 0;
